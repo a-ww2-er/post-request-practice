@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./Style.css" />
+</head>
+
+<body>
+  <main>
+    <form class="box" action="/signup" method="POST">
+      <h1>GET-DROP Login</h1>
+      <div class="form-row">
+        <label for="name"> Enter Username: </label>
+        <input type="text" name="name" placeholder="Enter username" id="name" autocomplete="false" />
+        <label for="password"> Enter password: </label>
+        <input type="password" name="password" placeholder="Enter password" id="password" autocomplete="false" />
+      </div>
+      <button type="submit" class="block">Login</button>
+    </form>
+    <div class="users">
+     <p>REGISTERED USERS: <label id="users"></label></p>
+      <p> PASSWORD:<label id="pass"></label></p>
+  </div>
+  <script type="module">
+      import { users } from '/data.js';
+      const app = JSON.stringify(users);
+      let username = document.getElementById("users");
+      let password = document.getElementById("pass");
+      let usersname =users.map((useame) => useame.username);
+      let userspassword =users.map((useame) => useame.password);
+      array()
+      function array() {
+          username.innerHTML = (` ${usersname}`);
+          password.innerHTML = (`${userspassword}`);
+      };
+      console.log(app);
+      console.log(userspassword)
+      console.log(usersname)
+  </script>
+  </main>
+</body>
+</html>

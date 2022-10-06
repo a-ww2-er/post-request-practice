@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgb(168, 8, 8),rgb(180, 21, 21)
+            );
+            text-align: center;
+        }
+        #welcomepage{
+            min-height: 100vh;
+            color: black;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 5vh;
+           text-align: center;
+           margin-top: 10%;
+        }
+        p {
+            display: inline;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div  id="welcomepage" onclick="pagee()">
+        <h1> LOGIN SUCCESSFUL!</h1>
+        <p> redirects in <p id="counter"><p></p>
+       
+    </div>
+
+    <script type="text/javascript">
+        //let gg= req.body;
+        let welcomepage = document.getElementById("welcomepage");
+        let page = setTimeout(pagee, 5000);
+        function pagee() {
+            if (welcomepage.style.display === "none") {
+                welcomepage.style.display = "block"
+                location.replace('/index');
+            }
+            else {
+                welcomepage.style.display = "none";
+                location.replace('/index');
+                
+            }
+        };
+        let count=5;
+        let counter = document.getElementById("counter");
+        const timer = setInterval(countup,1000);
+        function countup(){
+            count -=1;
+            counter.innerHTML= (`${count}`);
+        }
+
+    </script>
+</body>
+</html>
